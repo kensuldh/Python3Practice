@@ -25,7 +25,7 @@ class Twitte(Model):
 # https://github.com/bear/python-twitter/blob/master/twitter/api.py
 def GetStreamFilter(api,
                     follow=None,
-                    track=None,
+                    track='#spiknsk',
                     locations=None,
                     delimited=None,
                     stall_warnings=None):
@@ -71,7 +71,7 @@ def GetStreamFilter(api,
 
 def main(argvs, argc):
     if argc != 6:
-        #print ("Usage #python consumer_key consumer_secret access_token_key access_token_secret #tag1,#tag2 " )
+        print ('Usage #python %s consumer_key consumer_secret access_token_key access_token_secret #tag1,#tag2 ' % argvs[0])
         #, argvs[0] ,
         return 1
     consumer_key = argvs[1]

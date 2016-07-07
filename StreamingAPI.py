@@ -10,10 +10,8 @@ url = "https://stream.twitter.com/1.1/statuses/filter.json"
 
 auth = OAuth1(api_key, api_secret, access_token, access_secret)
 
-r = requests.get(url, auth=auth, stream=True, data={"track":"#spiknsk"})
+r = requests.post(url, auth=auth, stream=True, data={"follow":"nasa9084","track":"emacs"})
+print(r.json())
 
-print(r)
-
-for line in r.iter_lines(chunk_size=64):
-    line = line.decode('cp932')
-    print(line)
+for line in r.iter_lines():
+  print(line["text"])
