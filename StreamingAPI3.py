@@ -1,6 +1,7 @@
 #-*- encoding: utf-8 -*-
 
 from twitter import *
+
 import os,sys,time
 
 #NG words
@@ -14,13 +15,13 @@ retry_max = 10
 retry_time = 10
 
 #ここにはTwitter Devで登録したアプリケーションのCONSUMER_KEY,SECRETを記入する。
-CONSUMER_NAME = 'YOUR APPLICATION NAME'
-CONSUMER_KEY =  'YOUR CONSUMER KEY'
-CONSUMER_SECRET = 'YOUR CONSUMER SECRET'
+CONSUMER_NAME = 'APITest_spiknsk'
+CONSUMER_KEY =  'PUhRhZcpxbcpd2eUWgjdvxb1N'
+CONSUMER_SECRET = 'qb3JPFWXCfEWSM8EVFHbrZHnaDCEOx84YptoXNhsCrTpNDeVES'
 
 #過去に認証したときのTokenを探す。
 TWITTER_CREDS = os.path.expanduser('.credentials')
-if not os.path.exists(TWITTER_CREDS):
+#if not os.path.exists(TWITTER_CREDS):
   #無ければ、OAuthで認証
   oauth_dance(CONSUMER_NAME, CONSUMER_KEY, CONSUMER_SECRET, TWITTER_CREDS)
 oauth_token, oauth_secret = read_token_file(TWITTER_CREDS)
