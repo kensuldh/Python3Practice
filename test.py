@@ -1,10 +1,17 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
 
-import json
+import clr
+clr.AddReferenceByPartialName('UnityEngine')
+import UnityEngine
 
-json_data = {'Python':'python-izm.com',
-    'SearchEngin':('google.co.jp','yahoo.co.jp')}
+import sys
+sys.path.append('C:/Python34/Lib')
+sys.path.append('C:/Python34/Lib/site-packages')
 
-encode_json_data = json.dumps(json_data, indent=4)
+import requests
 
-print (encode_json_data)
+def print_message():
+    UnityEngine.Debug.Log('Test message from Python!')
+
+
+print_message()
